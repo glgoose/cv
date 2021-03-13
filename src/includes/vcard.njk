@@ -5,34 +5,40 @@
     {% endif %}
 
     <div class="vcard__content">
-        <div class="vcard__title">
-            <h1 class="p-name">{{ author.name }}</h1>
-            {% if author.pronouns %}
-                <em class="vcard__pronouns p-gender-identity">({{ author.pronouns }})</em>
-            {% endif %}
+
+        <div class="vcard__heading">
+            <div class="vcard__title">
+                <h1 class="p-name">{{ author.name }}</h1>
+                {% if author.pronouns %}
+                    <em class="vcard__pronouns p-gender-identity">({{ author.pronouns }})</em>
+                {% endif %}
+            </div>
+
+            <p class="vcard__subtitle lead">
+                {% if author.job-title %}
+                    <span class="p-job-title">{{ author.occupation }}</span>
+                    <span aria-hidden="true">&middot;</span>
+                {% endif %}
+                {% if author.location %}
+                    {% icon "location" %}
+                    <span class="p-locality">{{ author.location }}</span>
+                {% endif %}
+            </p> 
         </div>
 
-        <p class="vcard__subtitle lead">
-            <span class="p-job-title">{{ author.occupation }}</span>
-            {% if author.location %}
-                <span aria-hidden="true">&middot;</span>
-                <span class="p-locality">{{ author.location }}</span>
-            {% endif %}
-        </p> 
-
         <div class="vcard__contact p-contact">
+             <a class="vcard__link p-tel" aria-label="Telephone" href="tel:{{ author.telephone | stripSpaces }}">
+                {% icon "telephone" %}
+                <span class="vcard__link-text">{{ author.telephone }}</span>
+            </a>
+            
             {% if author.email %}
                 <a class="vcard__link u-email" aria-label="Email" href="mailto:{{ author.email | obfuscate | safe }}">
                     {% icon "email" %}
                     <span class="vcard__link-text">{{ author.email | obfuscate | safe }}</span>
                 </a>
             {% endif %}
-            {% if author.telephone %}
-                <a class="vcard__link p-tel" aria-label="Telephone" href="tel:{{ author.telephone | stripSpaces }}">
-                    {% icon "telephone" %}
-                    <span class="vcard__link-text">{{ author.telephone }}</span>
-                </a>
-            {% endif %}
+
             {% if author.website %}
                 <a class="vcard__link u-url" aria-label="Website" href="{{ author.website }}">
                     {% icon "laptop" %}

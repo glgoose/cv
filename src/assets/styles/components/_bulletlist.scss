@@ -1,5 +1,4 @@
 .bulletlist {
-    list-style: none;
     padding-left: 1.5em;
 
     li {
@@ -18,5 +17,20 @@
             top: 0.5em;
             left: -1em;
         }
+    }
+}
+
+.entry__content li {
+    margin-bottom: 0.1em;
+
+    &::before {
+        content: '•';
+        color: $gray;
+        display: inline-block;
+        width: 0.9em;
+    }
+
+    ul {
+        padding-left: 1em;
     }
 }

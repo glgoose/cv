@@ -1,6 +1,6 @@
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
-{%- set pageTitle -%}{{ author.name }}{% if author.occupation %} - {{ author.occupation }}{% endif %}{% if author.location %} in {{ author.location }}{% endif %}{%- endset -%}
-{%- set pageDescription -%}Online Resume of {{ author.name }}{%- endset -%}
+{%- set pageTitle -%}CV {{ author.name }}{% if author.occupation %} - {{ author.occupation }}{% endif %}{%- endset -%}
+{%- set pageDescription -%}Online resume of {{ author.name }}{%- endset -%}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

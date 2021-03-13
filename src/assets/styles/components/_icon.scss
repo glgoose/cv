@@ -1,9 +1,22 @@
 .icon {
-    display: inline-block;
-    font-size: 1.5em;
+    fill: currentColor;
+}
+
+.vcard__subtitle .icon {
+    color: var(--secondary-color, $secondary-color);
     height: 1em;
     width: 1em;
-    vertical-align: middle;
-    fill: currentColor;
+    margin-right: 0.25em;
+}
+
+.vcard__contact .icon {
+    height: 1.5em;
+    width: 1.5em;
     pointer-events: none;
+}
+
+.entry .icon {
+    height: 0.7em;
+    width: 0.7em;
+    margin-right: -0.1em; 
 }
