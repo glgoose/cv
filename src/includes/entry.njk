@@ -25,6 +25,7 @@
                 {% endif %}
                 {% if entry.data.location %}
                     <span aria-hidden="true">&middot;</span>
+                    {% icon "location" %}
                     <span class="p-location">{{ entry.data.location }}</span>
                 {% endif %}
             </p>

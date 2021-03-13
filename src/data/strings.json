@@ -1,15 +1,16 @@
 {
     "titles": {
-        "experience": "Work Experience",
-        "education": "Education",
+        "intro": "Over Mij",
+        "experience": "Werkervaring",
+        "education": "Opleiding",
         "skills": "Skills",
-        "languages": "Languages"
+        "languages": "Talenkennis"
     },
     "labels": {
         "email": "Email",
-        "telephone": "Telephone",
-        "print": "Print Résumé",
+        "telephone": "Mobiel",
+        "print": "Print",
         "present": "Present",
-        "lastUpdated": "Last updated"
+        "lastUpdated": "Laatst aangepast"
     }
 }

@@ -1,60 +1,45 @@
 // Main Site Layout
-
 body {
-    overflow-x: hidden;
+    display: flex;
+    justify-content: left;
+    min-height: 100vh;
+    overflow-x: hidden;     /* to make the browser wide footer work */
+    padding: 3% 5% 0 5%;
 }
 
 .layout {
-    min-height: 100%;
-    min-height: 100vh;
-    position: relative;
-
-    .header {
-        grid-area: header;
-        padding: $spacing-y 0;
-    }
-    .main {
-        grid-area: main;
-    }
-    .sidebar {
-        grid-area: sidebar;
-        background-color: $primary-color;
-        background-color: var(--primary-color, $primary-color);
-    }
-    .footer {
-        grid-area: footer;
-        padding: $spacing-y 0;
-        background-color: $gray-light;
-    }
-
-    @include mq(lg) {
-        display: grid;
-        grid-template-columns: 25% 1fr;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-            'sidebar header'
-            'sidebar main'
-            'sidebar footer';
-    }
+    max-width: $layout-max-width;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
 }
 
-.container {
-    padding-left: 5%;
-    padding-right: 5%;
-    max-width: $container-max-width;
+header {
+    padding-bottom: 1.5em;
+}
 
-    @include mq(lg) {
-        padding-left: 7%;
-        padding-right: 7%;
+main {
+    padding: 1em 0;
+}
+
+footer {
+    background-color: $gray-light;
+    padding: 0.8em 9999rem 1.2em 9999rem;
+    margin: auto -9999rem 0 -9999rem;
+    flex-direction: row;
+    align-items: center;
+
+    p { 
+        height: fit-content;
     }
 }
 
 .grid {
     display: grid;
-    column-gap: $spacing-x * 2;
     page-break-inside: avoid;
 
     &--2col {
         grid-template-columns: 1fr 1fr;
+        column-gap: 5em;
     }
 }

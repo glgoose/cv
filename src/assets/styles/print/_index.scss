@@ -2,7 +2,7 @@
     // GENERAL PRINT RESET
 
     @page {
-        margin: 1cm 3cm;
+        margin: 2cm;
     }
 
     :root {
@@ -10,11 +10,14 @@
     }
 
     html,
-    body {
+    body,
+    .layout {
         width: 100%;
         min-height: 100%;
-        font-size: 10px !important;
         overflow: visible;
+        background: none;
+        margin: 0;
+        padding: 0;
     }
 
     *,
@@ -43,6 +46,7 @@
 
     .layout {
         display: block;
+        font-size: $print-font-size !important;
     }
 
     .container {
@@ -55,16 +59,12 @@
         padding: 0 !important;
     }
 
-    .sidebar {
-        display: none !important;
-    }
-
     .footer {
         background: transparent !important;
     }
 
     .section__title {
-        border-color: #b5b5b5;
+        border-color: var(--text-color) !important;
     }
 
     .vcard__avatar {
@@ -76,7 +76,7 @@
 
     .entrylist::before,
     .entrylist__item::before,
-    .bulletlist li::before {
+    li::before {
         color-adjust: exact !important;
         -webkit-print-color-adjust: exact !important;
     }

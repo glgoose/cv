@@ -2,12 +2,12 @@
 layout: base
 ---
 
-<main class="main container">
+<main>
 
         {% if collections.introduction.length %}
             {% set intro = collections.introduction|first %}
             <section class="section" id="section-introduction">
-                <h2 class="section__title">{{ intro.data.title }}</h2>
+                <h2 class="section__title">{{ strings.titles.intro }}</h2>
                 <div class="lead p-summary">
                     {{ intro.templateContent | safe }}
                 </div>
@@ -54,7 +54,7 @@ layout: base
         </div>
     {% endif %}
 
-    {% if collections.custom.length %}
+    {% if collections.custom.title.length %}
         {% set custom = collections.custom|first %}
         <section class="section" id="section-custom">
             {% if custom.data.title %}
