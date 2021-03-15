@@ -8,5 +8,5 @@ end: 2019-09-27
 ---
 * develop web scrapers in javascript/node.js (with Apify SDK)
     * web/browser automation: puppeteer (chrome) & cheerio
-* technical analysis of potential projects
+* reverse engineer websites, API's & mobile apps
 * managing communications and projects across multiple customers
