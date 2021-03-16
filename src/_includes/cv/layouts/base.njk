@@ -1,7 +1,11 @@
+---
+permalink: '/{{ lang }}/'
+---
+
 <!DOCTYPE html>
-<html class="no-js" lang="{{ meta.lang }}">
+<html class="no-js" lang="{{ lang }}">
 <head>
-    {% include "meta.njk" %}
+    {% include "../partials/meta.njk" %}
     <link rel="preload" href="{{ '/assets/fonts/SourceCodePro-Light.otf.woff2.woff2' | url }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
 </head>
@@ -9,9 +13,9 @@
     <div data-icon-sprite hidden>{% iconsprite %}</div>
 
     <div class="layout h-resume" role="document">
-        {% include "header.njk" %}
-        {{ content | safe }}
-        {% include "footer.njk" %}
+        {% include "../partials/header.njk" %}
+        {% include "../partials/main.njk" %}
+        {% include "../partials/footer.njk" %}
     </div>
 
     <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>

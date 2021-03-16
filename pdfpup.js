@@ -9,7 +9,7 @@ const url = "http://localhost:8080";
     await page.goto(url, { waitUntil: "networkidle0" });
 
     await page.pdf({
-        path: "resume.pdf",
+        path: "cv.pdf",
         format: "A4",
         preferCSSPageSize: true,
         printBackground: false

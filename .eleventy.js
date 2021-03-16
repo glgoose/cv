@@ -6,6 +6,9 @@ const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 module.exports = function (config) {
     // Plugins
     config.addPlugin(pluginRss)
@@ -43,30 +46,8 @@ module.exports = function (config) {
     )
 
     // Layouts
-    config.addLayoutAlias('base', 'base.njk')
-    config.addLayoutAlias('resume', 'resume.njk')
-
-    // Collections
-    const collections = ['work', 'education']
-    collections.forEach((name) => {
-        config.addCollection(name, function (collection) {
-            const folderRegex = new RegExp(`\/${name}\/`)
-            const inEntryFolder = (item) =>
-                item.inputPath.match(folderRegex) !== null
-
-            const byStartDate = (a, b) => {
-                if (a.data.start && b.data.start) {
-                    return a.data.start - b.data.start
-                }
-                return 0
-            }
-
-            return collection
-                .getAllSorted()
-                .filter(inEntryFolder)
-                .sort(byStartDate)
-        })
-    })
+    config.addLayoutAlias('cv', 'cv/layouts/base.njk')
+    config.addLayoutAlias('section', 'cv/partials/section.njk')
 
     // Pass-through files
     config.addPassthroughCopy('src/robots.txt')
@@ -81,9 +62,8 @@ module.exports = function (config) {
         dir: {
             input: 'src',
             output: 'dist',
-            includes: 'includes',
-            layouts: 'layouts',
-            data: 'data'
+            includes: '_includes',
+            data: '_data'
         },
         templateFormats: ['njk', 'md', '11ty.js'],
         htmlTemplateEngine: 'njk',
