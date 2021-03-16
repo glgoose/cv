@@ -2,7 +2,7 @@
 <ol class="entrylist" reversed>
     {% for entry in entries | reverse %}
     <li class="entrylist__item h-event {% if microformat %}{{ microformat }}{% endif %}">
-        {% include "entry.njk" %}
+        {% include "./entry.njk" %}
     </li>
     {% endfor %}
 </ol>
