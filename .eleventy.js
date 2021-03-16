@@ -46,8 +46,8 @@ module.exports = function (config) {
     )
 
     // Layouts
-    config.addLayoutAlias('cv', 'cv/layouts/base.njk')
-    config.addLayoutAlias('section', 'cv/partials/section.njk')
+    config.addLayoutAlias('base', 'cv/layouts/base.njk')
+    config.addLayoutAlias('cv', 'cv/layouts/cv.njk')
 
     // Pass-through files
     config.addPassthroughCopy('src/robots.txt')
