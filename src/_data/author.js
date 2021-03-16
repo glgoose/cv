@@ -1,7 +1,10 @@
 module.exports = {
     name: "Glenn Goossens",
     occupation: "",
-    location: "Sint-Katelijne-Waver, België",
+    location: {
+        nl: "Sint-Katelijne-Waver, België",
+        en: "Sint-Katelijne-Waver, Belgium"
+    },
     avatar: "",
     pronouns: "",
     telephone: process.env.PHONE,
