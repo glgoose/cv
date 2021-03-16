@@ -12,11 +12,7 @@ permalink: '/{{ lang }}/'
 <body {% if meta.colors %}style="{{ meta.colors | themeColors }}"{% endif %}>
     <div data-icon-sprite hidden>{% iconsprite %}</div>
 
-    <div class="layout h-resume" role="document">
-        {% include "../partials/header.njk" %}
-        {% include "../partials/main.njk" %}
-        {% include "../partials/footer.njk" %}
-    </div>
+    {{ content | safe }}
 
     <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
     <!--! LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
