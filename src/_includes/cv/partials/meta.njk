@@ -17,8 +17,8 @@
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:locale" content="{{ meta.locale }}">
 <meta name="twitter:card" content="summary">
-{%- if author.avatar -%}
-    {%- set avatarUrl -%}/assets/images/{{ author.avatar }}{% endset %}
+{%- if cv.avatar -%}
+    {%- set avatarUrl -%}/assets/images/{{ cv.avatar }}{% endset %}
     <meta property="og:image" content="{{ avatarUrl | url | absoluteUrl(meta.url) }}">
 {%- endif -%}
 
@@ -36,16 +36,16 @@
 {# JSON LD #}
 <script type="application/ld+json">
     {
-        "name":"{{ author.name }}",
-        "description":"{{ author.occupation }}{% if author.location %} in {{ author.location }}{% endif %}",
-        "author": {
+        "name":"{{ cv.name }}",
+        "description":"{{ cv.occupation }}{% if cv.location %} in {{ cv.location }}{% endif %}",
+        "cv": {
             "@type":"Person",
-            "name":"{{ author.name }}"
+            "name":"{{ cv.name }}"
         },
         "@type":"WebSite",
         "url":"{{ meta.url }}",
-        "image":"{{ meta.url }}/assets/images/{{ author.avatar }}",
-        "headline":"{{ author.name }}",
+        "image":"{{ meta.url }}/assets/images/{{ cv.avatar }}",
+        "headline":"{{ cv.name }}",
         "sameAs":[
             {%- for social in author.social -%}
                 "{{ social.url }}"{%- if not loop.last -%},{%- endif -%}
