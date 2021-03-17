@@ -13,13 +13,18 @@ body {
 header {
     @media screen {
         padding-top: 5vh;
-        padding-bottom: 1vh;
     }
     display: flex;
 }
 
 main {
-    padding: $spacing-y 0;
+    padding-top: $spacing-y*2.5;
+    @media screen {
+        padding-bottom: $spacing-y*1.5;
+    }
+    @include mq-down(md)  {
+        padding: 2.5vh 0;
+    }
     flex-grow: 1;
 }
 
