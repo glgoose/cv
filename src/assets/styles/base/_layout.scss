@@ -24,7 +24,10 @@ main {
 }
 
 footer {
-    padding: $spacing-y 0;
+    padding-top: $spacing-y/2;
+    @media screen {
+        padding-bottom: 1.3vh;
+    }
     background-color: $gray-light;
 
     #footer-meta p {
