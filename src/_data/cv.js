@@ -1,17 +1,23 @@
 module.exports = {
     name: "Glenn Goossens",
     occupation: "",
-    nl: {
-        location: "Sint-Katelijne-Waver, België"
-    },
-    en: {
-        location: "Sint-Katelijne-Waver, Belgium"
-    },
     avatar: "",
     pronouns: "",
     telephone: process.env.PHONE,
     email: process.env.EMAIL,
     website: "",
+    nl: {
+        location: "Sint-Katelijne-Waver, België",
+        lastUpdated: "Laatst aangepast",
+        present: "Heden",
+        print: "Print"
+    },
+    en: {
+        location: "Sint-Katelijne-Waver, Belgium",
+        lastUpdated: "Last updated",
+        present: "Present",
+        print: "Print"
+    },
     social: [
         {
             name: "Github",
