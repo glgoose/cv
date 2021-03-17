@@ -10,8 +10,8 @@ layout: base
     {% include "../partials/main.njk" %}
 
     <footer class="utl-space-between">
-        <p>{{ strings.labels.lastUpdated }}: {{ build.timestamp | dateToFormat('dd.MM.yyyy') }}</p>
-        <button class="actions__btn js-print utl-screen-only has-tooltip" aria-label="{{ strings.labels.print }}">
+        <p>{{ cv[ lang ].lastUpdated }}: {{ build.timestamp | dateToFormat('dd.MM.yyyy') }}</p>
+        <button class="actions__btn js-print utl-screen-only has-tooltip" aria-label="{{ cv[ lang ].print }}">
             {% icon "print" %}
         </button>
     </footer>

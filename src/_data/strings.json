@@ -5,12 +5,5 @@
         "education": "Opleiding",
         "skills": "Skills",
         "languages": "Talenkennis"
-    },
-    "labels": {
-        "email": "Email",
-        "telephone": "Mobiel",
-        "print": "Print",
-        "present": "Present",
-        "lastUpdated": "Laatst aangepast"
     }
 }
