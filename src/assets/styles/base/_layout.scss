@@ -1,45 +1,46 @@
 // Main Site Layout
+
 body {
-    display: flex;
-    justify-content: left;
-    min-height: 100vh;
-    overflow-x: hidden;     /* to make the browser wide footer work */
-    padding: 3% 5% 0 5%;
+    overflow-x: hidden;
 }
 
 .layout {
-    max-width: $layout-max-width;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    padding-bottom: 1.5em;
+    padding: 3*$spacing-y 0 $spacing-y 0;
+    display: flex;
 }
 
 main {
-    padding: 2em 0;
+    padding: $spacing-y 0;
+    flex-grow: 1;
 }
 
 footer {
+    padding: $spacing-y 0;
     background-color: $gray-light;
-    padding: 0.8em 9999rem 1.2em 9999rem;
-    margin: auto -9999rem 0 -9999rem;
-    flex-direction: row;
-    align-items: center;
-    justify-items: space-between;
+}
 
-    p { 
-        height: fit-content;
+.container {
+    margin: 0 5vw;      /* with padding content shrinks because of max container width */
+    max-width: $container-max-width;
+    flex-grow: 1;
+
+    @include mq(lg) {
+        margin: 0 8vw;
     }
 }
 
 .grid {
     display: grid;
+    column-gap: $spacing-x * 2;
     page-break-inside: avoid;
 
     &--2col {
         grid-template-columns: 1fr 1fr;
-        column-gap: 5em;
     }
 }

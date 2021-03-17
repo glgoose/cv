@@ -4,18 +4,22 @@ layout: base
 
 <div class="layout h-resume" role="document">
     <header>
-        {% include "../partials/vcard.njk" %}
+        <div class=container>
+            {% include "../partials/vcard.njk" %}
+        </div>
     </header>
 
     {% include "../partials/main.njk" %}
 
-    <footer class="utl-space-between">
-        <p>
-        {{ cv[ lang ].lastUpdated }}: {{ build.timestamp | dateToFormat('dd.MM.yyyy') }}
-        <a href="{{ cv.repo }}" class="repo utl-screen-only" target="_blank" rel="noreferer noopener">(view source)</a>
-        </p>
-        <button class="actions__btn js-print utl-screen-only has-tooltip" aria-label="{{ cv[ lang ].print }}">
-            {% icon "print" %}
-        </button>
+    <footer>
+        <div class="container utl-space-between">
+            <p>
+            {{ cv[ lang ].lastUpdated }}: {{ build.timestamp | dateToFormat('dd.MM.yyyy') }}
+            <a href="{{ cv.repo }}" class="repo utl-screen-only" target="_blank" rel="noreferer noopener">(view source)</a>
+            </p>
+            <button class="actions__btn js-print utl-screen-only has-tooltip" aria-label="{{ cv[ lang ].print }}">
+                {% icon "print" %}
+            </button>
+        </div>
     </footer>
 </div>
