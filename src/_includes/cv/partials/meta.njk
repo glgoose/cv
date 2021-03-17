@@ -1,4 +1,4 @@
-{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
+{%- set absolutePageUrl -%}{{ page.url | url }}{%- endset -%}
 {%- set pageTitle -%}CV {{ author.name }}{% if author.occupation %} - {{ author.occupation }}{% endif %}{%- endset -%}
 {%- set pageDescription -%}Online resume of {{ author.name }}{%- endset -%}
 
@@ -15,11 +15,11 @@
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDescription }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:locale" content="{{ meta.locale }}">
+<meta property="og:locale" content="{{ cv[lang].locale }}">
 <meta name="twitter:card" content="summary">
 {%- if cv.avatar -%}
     {%- set avatarUrl -%}/assets/images/{{ cv.avatar }}{% endset %}
-    <meta property="og:image" content="{{ avatarUrl | url | absoluteUrl(meta.url) }}">
+    <meta property="og:image" content="{{ avatarUrl | url }}">
 {%- endif -%}
 
 {# Favicon #}
@@ -28,26 +28,26 @@
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
 <link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | url }}">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
-{% if meta.colors.primary %}
-    <link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="{{ meta.colors.primary }}">
-    <meta name="theme-color" content="{{ meta.colors.primary }}">
+{% if cv.colors.secondary %}
+    <link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="{{ cv.colors.secondary }}">
+    <meta name="theme-color" content="{{ cv.colors.secondary }}">
 {% endif %}
 
 {# JSON LD #}
 <script type="application/ld+json">
     {
         "name":"{{ cv.name }}",
-        "description":"{{ cv.occupation }}{% if cv.location %} in {{ cv.location }}{% endif %}",
+        "description":"Online resume of {{ cv.name }}",
         "cv": {
             "@type":"Person",
             "name":"{{ cv.name }}"
         },
         "@type":"WebSite",
-        "url":"{{ meta.url }}",
-        "image":"{{ meta.url }}/assets/images/{{ cv.avatar }}",
+        "url":"{{ meta.baseUrl }}/{{ lang }}/",
+        "image":"{{ meta.baseUrl }}/assets/images/{{ cv.avatar }}",
         "headline":"{{ cv.name }}",
         "sameAs":[
-            {%- for social in author.social -%}
+            {%- for social in cv.social -%}
                 "{{ social.url }}"{%- if not loop.last -%},{%- endif -%}
             {%- endfor -%}
         ],
