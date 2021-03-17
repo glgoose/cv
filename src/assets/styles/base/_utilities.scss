@@ -41,15 +41,27 @@
     justify-content: space-between;
 }
 
+.utl-justify-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.utl-align-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
 // Text Utilities
 
-.utl-align-left {
+.utl-text-align-left {
     text-align: left !important;
 }
-.utl-align-center {
+.utl-text-align-center {
     text-align: center !important;
 }
-.utl-align-right {
+.utl-text-align-right {
     text-align: right !important;
 }
 
