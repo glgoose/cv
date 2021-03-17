@@ -6,6 +6,7 @@ module.exports = {
     telephone: process.env.PHONE,
     email: process.env.EMAIL,
     website: "",
+    repo: "https://github.com/glgoose/resume",
     nl: {
         location: "Sint-Katelijne-Waver, België",
         lastUpdated: "Laatst aangepast",
