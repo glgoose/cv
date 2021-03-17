@@ -50,13 +50,4 @@
         {% endif %}
     </div>
 
-    {% if custom.length %}
-        {{ macros.section('custom') }}
-            {{ macros.h2(custom.data.title) }}
-            <div class="markdown">
-                {{ custom.templateContent | safe }}
-            </div>
-        </section>
-    {% endif %}
-
 </main>
