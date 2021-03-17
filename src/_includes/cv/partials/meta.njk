@@ -1,19 +1,17 @@
-{%- set absolutePageUrl -%}{{ page.url | url }}{%- endset -%}
-{%- set pageTitle -%}CV {{ author.name }}{% if author.occupation %} - {{ author.occupation }}{% endif %}{%- endset -%}
-{%- set pageDescription -%}Online resume of {{ author.name }}{%- endset -%}
+{%- set absolutePageUrl -%}{{ meta.baseUrl }}{{ page.url | url }}{%- endset -%}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ pageTitle }}</title>
+<title>{{ title }}</title>
 
 {# General #}
-<meta name="description" content="{{ pageDescription }}">
+<meta name="description" content="{{ description }}">
 <link rel="canonical" href="{{ absolutePageUrl }}">
 
 {# Open Graph #}
-<meta property="og:site_name" content="{{ pageTitle }}">
-<meta property="og:title" content="{{ pageTitle }}">
-<meta property="og:description" content="{{ pageDescription }}">
+<meta property="og:site_name" content="{{ title }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:locale" content="{{ cv[lang].locale }}">
 <meta name="twitter:card" content="summary">
@@ -37,13 +35,13 @@
 <script type="application/ld+json">
     {
         "name":"{{ cv.name }}",
-        "description":"Online resume of {{ cv.name }}",
+        "description":"{{ cv[lang].description }}",
         "cv": {
             "@type":"Person",
             "name":"{{ cv.name }}"
         },
         "@type":"WebSite",
-        "url":"{{ meta.baseUrl }}/{{ lang }}/",
+        "url":"{{ absolutePageUrl }}",
         "image":"{{ meta.baseUrl }}/assets/images/{{ cv.avatar }}",
         "headline":"{{ cv.name }}",
         "sameAs":[
