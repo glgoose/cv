@@ -24,8 +24,8 @@ main {
 }
 
 footer {
-    padding-top: 1em;
     @media screen {
+        padding-top: 1.2vh;
         padding-bottom: 1.35vh;
     }
     background-color: $gray-light;
