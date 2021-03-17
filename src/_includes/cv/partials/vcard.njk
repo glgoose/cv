@@ -15,13 +15,14 @@
             </div>
 
             <p class="vcard__subtitle lead">
-                {% if author.job-title %}
-                    <span class="p-job-title">{{ author.occupation }}</span>
+                {% if author.occupation %}
+                    <span class="p-occupation">{{ author.occupation }}</span>
                     <span aria-hidden="true">&middot;</span>
                 {% endif %}
-                {% if author.location %}
+
+                {% if author[ lang ].location %}
                     {% icon "location" %}
-                    <span class="p-locality">{{ author.location }}</span>
+                    <span class="p-locality">{{ author[ lang ].location }}</span>
                 {% endif %}
             </p> 
         </div>
