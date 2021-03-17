@@ -13,8 +13,8 @@ body {
 header {
     @media screen {
         padding-top: 4vh;
+        padding-bottom: 1vh;
     }
-    padding-bottom: $spacing-y;
     display: flex;
 }
 
