@@ -10,8 +10,7 @@
     }
 
     html,
-    body,
-    .layout {
+    body {
         width: 100%;
         min-height: 100%;
         height: auto;
@@ -45,24 +44,25 @@
     // ELEMENTS
     // PRINT STYLE ADJUSTMENTS
 
-    .layout {
-        display: block;
+    body {
         font-size: $print-font-size !important;
+    }
+
+    .container, footer {
+        margin: 0;
+        padding: 0;
     }
 
     .container {
         max-width: none !important;
-        padding-left: 0;
-        padding-right: 0;
     }
 
-    .header {
-        padding: 0 !important;
-    }
-
-    .footer {
+    footer {
         background: transparent !important;
-        padding-bottom: 0;
+    }
+
+    main {
+        padding-bottom: 1em;
     }
 
     .section__title {
