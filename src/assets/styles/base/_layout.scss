@@ -11,7 +11,10 @@ body {
 }
 
 header {
-    padding: 3*$spacing-y 0 $spacing-y 0;
+    @media screen {
+        padding-top: 4vh;
+    }
+    padding-bottom: $spacing-y;
     display: flex;
 }
 
@@ -23,6 +26,10 @@ main {
 footer {
     padding: $spacing-y 0;
     background-color: $gray-light;
+
+    #footer-meta p {
+        margin-right: 0.5em;
+    }
 }
 
 .container {
