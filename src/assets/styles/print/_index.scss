@@ -49,8 +49,8 @@
     }
 
     .container, footer {
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .container {
@@ -62,7 +62,7 @@
     }
 
     main {
-        padding-bottom: 1em;
+        padding-bottom: 1em !important;
     }
 
     .section__title {
@@ -73,7 +73,7 @@
         position: static !important;
         transform: none !important;
         margin: 0 2rem 0 0 !important;
-        border: 0;
+        border: 0 !important;
     }
 
     .entrylist::before,
