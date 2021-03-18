@@ -1,46 +1,65 @@
-{% import '../macros.njk' as macros %}
+{# MACROS #}
+{% macro section(id, 2col=false, h2) %}
+    <section class="section{% if 2col %} section--half{% endif %}" id="section-{{ id }}">
+        <h2 class="section__title">{{ h2 }}</h2>
+        {{ sectionContent | safe }}
+    </section>
+{% endmacro %}
 
-{# html #}
+{% macro entrylist(microformat, entries) %}
+    {% include "cv/partials/entrylist.njk" %}
+{% endmacro %}
+
+{% macro list(collectionName, lang=false) %}
+<ul class="bulletlist">
+    {% for item in collectionName.data.list %}
+        <li class="p-skill">{% if lang %}{{ item.name }} ({{ item.level }}){% else %}{{ item }}{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endmacro %}
+
+{# HTML #}
+{# introduction #}
 {% set intro = collections["intro_"+ lang]|first %}
 {% if intro.data.title %}
-    {{ macros.section('introduction') }}
-        {{ macros.h2(intro.data.title) }}
+    {% set sectionContent %}
         <div class="lead p-summary">
             {{ intro.templateContent | safe }}
         </div>
-    </section>
+    {% endset %}
+    {{ section(id='introduction', h2=intro.data.title) }}
 {% endif %}
 
+{# experience #}
 {% set experience = collections["experience_" + lang] %}
-{{ macros.section('experience') }}
-    {{ macros.h2(strings.titles.experience) }}
-    {% set microformat = 'p-experience' %}
-    {% set entries = experience %}
-    {% include "cv/partials/entrylist.njk" %}
-</section>
+{% set sectionContent %}
+    {{ entrylist(microformat='p-experience', entries=experience) }}
+{% endset %}
+{{ section(id='experience', h2=strings.titles.experience) }}
 
+{# education #}
 {% set education = collections["education_" + lang] %}
-{{ macros.section('education') }}
-    {{ macros.h2(strings.titles.education) }}
-    {% set microformat = 'p-education' %}
-    {% set entries = education %}
-    {% include "cv/partials/entrylist.njk" %}
-</section>
+{% set sectionContent %}
+    {{ entrylist(microformat='p-education', entries=education)}}
+{% endset %}
+{{ section(id='education', h2=strings.titles.education) }}
 
 <div class="grid grid--2col">
+    {# skills #}
     {% set skills = collections["skills_" + lang]|first %}
     {% if skills %}
-        {{ macros.section('skills', half=true) }}
-            {{ macros.h2(skills.data.title) }}
-            {{ macros.list(skills) }}
-        </section>
+        {% set sectionContent %}
+            {{ list(skills) }}
+        {% endset %}
+        {{ section(id='skills', 2col=true, h2=skills.data.title) }}
     {% endif %}
 
+    {# languages #}
     {% set languages = collections["languages_" + lang]|first %}
     {% if languages %}
-        {{ macros.section(languages, half=true) }}
-            {{ macros.h2(languages.data.title) }}
-            {{ macros.list(languages, lang=true) }}
-        </section>
+        {% set sectionContent %}
+            {{ list(languages, lang=true) }}
+        {% endset %}
+        {{ section(id='languages', 2col=true, h2=languages.data.title) }}
     {% endif %}
 </div>
