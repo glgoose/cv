@@ -1,7 +1,7 @@
 {% if entries %}
 <ol class="entrylist" reversed>
 
-    {% for entry in entries | reverse %}
+    {% for entry in entries | sort(reverse=true, caseSens=false, attr='start') %}
     <li class="entrylist__item h-event {% if microformat %}{{ microformat }}{% endif %}">
         <article class="entry">
             <div class="entry__header">
