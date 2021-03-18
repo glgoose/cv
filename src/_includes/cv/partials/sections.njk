@@ -1,13 +1,7 @@
 {% import '../macros.njk' as macros %}
 
-{# set variables for different languages #}
-{% set intro = collections["intro_"+ lang]|first %}
-{% set experience = collections["experience_" + lang] %}
-{% set education = collections["education_" + lang] %}
-{% set skills = collections["skills_" + lang]|first %}
-{% set languages = collections["languages_" + lang]|first %}
-
 {# html #}
+{% set intro = collections["intro_"+ lang]|first %}
 {% if intro.data.title %}
     {{ macros.section('introduction') }}
         {{ macros.h2(intro.data.title) }}
@@ -17,6 +11,7 @@
     </section>
 {% endif %}
 
+{% set experience = collections["experience_" + lang] %}
 {{ macros.section('experience') }}
     {{ macros.h2(strings.titles.experience) }}
     {% set microformat = 'p-experience' %}
@@ -24,6 +19,7 @@
     {% include "cv/partials/entrylist.njk" %}
 </section>
 
+{% set education = collections["education_" + lang] %}
 {{ macros.section('education') }}
     {{ macros.h2(strings.titles.education) }}
     {% set microformat = 'p-education' %}
@@ -32,6 +28,7 @@
 </section>
 
 <div class="grid grid--2col">
+    {% set skills = collections["skills_" + lang]|first %}
     {% if skills %}
         {{ macros.section('skills', half=true) }}
             {{ macros.h2(skills.data.title) }}
@@ -39,6 +36,7 @@
         </section>
     {% endif %}
 
+    {% set languages = collections["languages_" + lang]|first %}
     {% if languages %}
         {{ macros.section(languages, half=true) }}
             {{ macros.h2(languages.data.title) }}
