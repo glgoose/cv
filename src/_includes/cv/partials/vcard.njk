@@ -50,7 +50,7 @@
             {% if cv.social %}
                 <div class="vcard__social">
                     {% for social in cv.social %}
-                        <a class="vcard__link" href="{{ social.url }}" aria-label="{{ social.name }}" rel="me">
+                        <a class="vcard__link" href="{{ social.url }}" aria-label="{{ social.name }}" target="_blank" rel="me">
                             {%- set isSocialIcon = true -%}
                             {%- icon social.name, isSocialIcon -%}
                             <span class="vcard__link-text p-nickname">{{- social.user -}}</span>
