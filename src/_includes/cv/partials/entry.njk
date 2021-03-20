@@ -1,0 +1,47 @@
+<li class="entrylist__item h-event {% if microformat %}{{ microformat }}{% endif %}">
+    <article class="entry">
+        <div class="entry__header">
+
+            <h3 class="entry__title p-name">{{ entryTitle | safe }}</h3>
+            
+            <p class="entry__time">
+                <time class="dt-start" datetime="{{ entry.startDate | dateToFormat("yyyy-MM-dd") }}">
+                    {{- entry.startDate | dateToFormat("MM/yyyy") -}}
+                </time>
+                <span>&ndash;</span>
+                {% if entry.startDate %}
+                    <time class="dt-end" datetime="{{ entry.endDate | dateToFormat("yyyy-MM-dd") }}">
+                        {{- entry.endDate | dateToFormat("MM/yyyy") -}}
+                    </time>
+                {% else %}
+                    <span>{{ cv[lang].present }}</span>
+                {% endif %}
+            </p>
+
+            {% if orgName %}
+                <p class="entry__organization p-org h-card">
+                    {% if entry.url %}
+                        <a href="{{ entry.url }}" class="p-name u-url" target="_blank" rel="noopener noreferrer">{{ orgName }}</a>
+                    {% else %}
+                        <span class="p-name">{{ orgName }}</span>
+                    {% endif %}
+                    {% if entry.location %}
+                        <span aria-hidden="true">&middot;</span>
+                        {% icon "location" %}
+                        <span class="p-location">{{ entry.location }}</span>
+                    {% endif %}
+                </p>
+            {% endif %}
+        </div>
+
+        {% if entry.highlights %}
+            <div class="entry__content p-summary">
+                <ul class="bulletlist-sm">
+                    {% for highlight in entry.highlights %}
+                        <li>{{- highlight | escape | nl2br -}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </article>
+</li>

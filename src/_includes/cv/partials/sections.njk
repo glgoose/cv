@@ -1,65 +1,80 @@
+{# SET VARIABLES #}
+{% set data = { nl: cv_nl, en: cv_en } %}
+
 {# MACROS #}
-{% macro section(id, 2col=false, h2) %}
-    <section class="section{% if 2col %} section--half{% endif %}" id="section-{{ id }}">
+{% macro section(id, h2, 2col=false) %}
+    <section class="section{{ ' section--half' if 2col }}" id="section-{{ id }}">
         <h2 class="section__title">{{ h2 }}</h2>
-        {{ sectionContent | safe }}
+        {{ caller() | safe }}
     </section>
 {% endmacro %}
 
-{% macro entrylist(microformat, entries) %}
-    {% include "cv/partials/entrylist.njk" %}
-{% endmacro %}
-
-{% macro list(collectionName, lang=false) %}
-<ul class="bulletlist">
-    {% for item in collectionName.data.list %}
-        <li class="p-skill">{% if lang %}{{ item.name }} ({{ item.level }}){% else %}{{ item }}{% endif %}</li>
-    {% endfor %}
-</ul>
+{% macro createEntry(entry, entryTitle, orgName, microformat) %}
+    {% include "cv/partials/entry.njk" %}
 {% endmacro %}
 
 {# HTML #}
 {# introduction #}
-{% set intro = collections["intro_"+ lang]|first %}
-{% if intro.data.title %}
-    {% set sectionContent %}
+{% set intro = data[lang].basics.summary %}
+{% if intro %}
+    {% call section(id='introduction', h2=strings.titles.intro) %}
         <div class="lead p-summary">
-            {{ intro.templateContent | safe }}
+            {{ intro | safe }}
         </div>
-    {% endset %}
-    {{ section(id='introduction', h2=intro.data.title) }}
+    {%- endcall %}
 {% endif %}
 
 {# experience #}
-{% set experience = collections["experience_" + lang] %}
-{% set sectionContent %}
-    {{ entrylist(microformat='p-experience', entries=experience) }}
-{% endset %}
-{{ section(id='experience', h2=strings.titles.experience) }}
+{% call section(id='experience', h2=strings.titles.experience) %}
+    <ol class="entrylist" reversed>
+        {% for entry in data[lang].work | sort(reverse=true, caseSens=false, 'startDate') %}
+            {{ createEntry(entry, entryTitle=entry.position, orgName=entry.name, microformat='p-experience') }}
+        {% endfor %}
+    </ol>
+{%- endcall %}
 
 {# education #}
-{% set education = collections["education_" + lang] %}
-{% set sectionContent %}
-    {{ entrylist(microformat='p-education', entries=education)}}
-{% endset %}
-{{ section(id='education', h2=strings.titles.education) }}
+{% set education = data[lang].education %}
+{% call section(id='education', h2=strings.titles.education) %}
+    <ol class="entrylist" reversed>
+        {% for entry in data[lang].education | sort(reverse=true, caseSens=false, 'startDate') %}
+            {{ createEntry(entry, entryTitle=entry.studyType + ': ' + entry.area, orgName=entry.institution, microformat='p-education') }}
+        {% endfor %}
+    </ol>
+{%- endcall %}
 
 <div class="grid grid--2col">
     {# skills #}
-    {% set skills = collections["skills_" + lang]|first %}
+    {% set skills = data[lang].skills %}
     {% if skills %}
-        {% set sectionContent %}
-            {{ list(skills) }}
-        {% endset %}
-        {{ section(id='skills', 2col=true, h2=skills.data.title) }}
+        {% call section(id='skills', h2=strings.titles.skills, 2col=true) %}
+            <ul class="bulletlist">
+                {% for skill in skills %}
+                    <li>
+                        <span>{{ skill.name }} ({{ skill.level | lower }}): </span>
+                        {% for keyword in skill.keywords %}
+                            <span>
+                                <span class="p-skill">{{ keyword | lower }}</span>
+                                {{- ', ' if not loop.last -}}
+                            </span>
+                        {% endfor %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {%- endcall %}
     {% endif %}
 
     {# languages #}
-    {% set languages = collections["languages_" + lang]|first %}
+    {% set languages = data[lang].languages %}
     {% if languages %}
-        {% set sectionContent %}
-            {{ list(languages, lang=true) }}
-        {% endset %}
-        {{ section(id='languages', 2col=true, h2=languages.data.title) }}
+        {% call section(id='languages', h2=strings.titles.languages, 2col=true) %}
+            <ul class="bulletlist">
+                {% for lang in languages %}
+                    <li class="p-skill">
+                        {{ lang.language }} ({{ lang.fluency | lower }})
+                    </li>
+                {% endfor %}
+            </ul>
+        {%- endcall %}
     {% endif %}
 </div>

@@ -18,7 +18,10 @@ layout: base
     <footer>
         <div class="container utl-space-between">
             <div id="footer-meta" class="utl-align-center">
-                <p>{{ cv[ lang ].lastUpdated }}: {{ build.timestamp | dateToFormat('dd.MM.yyyy') }}</p>
+                <span>
+                    <p>{{- cv[ lang ].lastUpdated }}: </p>
+                    <span class="dt-updated">{{- build.timestamp | dateToFormat('dd.MM.yyyy') }}</span>
+                </span>
                 <a href="{{ cv.repo }}" class="repo utl-screen-only" target="_blank" rel="noreferer noopener">(view source)</a>
             </div>
             <button class="actions__btn js-print utl-screen-only has-tooltip" aria-label="{{ cv[ lang ].print }}">

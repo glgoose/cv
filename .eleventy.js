@@ -1,5 +1,6 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
+const yaml = require("js-yaml");
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
@@ -44,6 +45,9 @@ module.exports = function (config) {
             typographer: true
         })
     )
+
+    // YAML
+    config.addDataExtension("yaml", contents => yaml.safeLoad(contents));
 
     // Layouts
     config.addLayoutAlias('base', 'cv/layouts/base.njk')

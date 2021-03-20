@@ -17,20 +17,30 @@
             top: 0.5em;
             left: -1em;
         }
+
+        span {
+            display: inline-block;
+        }
     }
 }
 
-.entry__content li {
-    margin-bottom: 0.1em;
+.bulletlist-sm {
+    padding-left: 1em;
+    li {
+        position: relative;
+        margin-bottom: 0.1em;
 
-    &::before {
-        content: '•';
-        color: $gray;
-        display: inline-block;
-        width: 0.9em;
-    }
+        &::before {
+            content: '•';
+            color: $gray;
+            display: block;
+            position: absolute;
+            transform: translateX(-100%);
+            width: 0.9em;
+        }
 
-    ul {
-        padding-left: 1em;
+        ul {
+            padding-left: 1em;
+        }
     }
 }
