@@ -51,7 +51,7 @@ work:
     
   - name: Rotero
     position: Verkoopsingenieur
-    location: Mechelen, België
+    location: Mechelen, Belgium
     description: ~
     url: https://rotero.com/en/
     startDate: 2016-03-16
@@ -78,7 +78,7 @@ education:
   - studyType: Master of Science
     area: 'Industrial Engineering: Electromechanics, Minor Automotive Engineering'
     institution: De Nayer
-    location: Sint-Katelijne-Waver, België
+    location: Sint-Katelijne-Waver, Belgium
     url: https://iiw.kuleuven.be/english/programmes/MA/electromechanical-engineering
     startDate: 2011-09-01
     endDate: 2013-02-01
@@ -86,7 +86,7 @@ education:
   - studyType: Bachelor of Science
     area: 'Industrial Engineering: Electromechanics'
     institution: De Nayer
-    location: Sint-Katelijne-Waver, België
+    location: Sint-Katelijne-Waver, Belgium
     url: https://onderwijsaanbod.kuleuven.be/opleidingen/e/CQ_51601481.htm
     startDate: 2008-09-01
     endDate: 2011-09-01
