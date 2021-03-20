@@ -8,7 +8,7 @@ basics:
   email: process.env.EMAIL
   phone: process.env.PHONE
   url: ~
-  summary: >
+  summary: >-
     Ik ben zeer analytisch, kritisch en systeemgericht. Ik kan goed ergens diep op focussen en verbanden zien.
     Ik ben een generalist die verder bouwt op bewezen oplossingen, begrijpt wat wanneer nodig is en graag van anderen bijleert.
     Ik hou van automatiseren, het continue toevoegen van waarde en de creativiteit die daarbij komt kijken.
@@ -57,7 +57,7 @@ work:
     startDate: 2016-03-16
     endDate: 2017-21-04
     highlights:
-      - |
+      - |-
         technische ondersteuning en verkoop in de machinebouw
         producten: sensoren, aandrijfsystemen (e.g. motoren), solenoïdes
       - 'digitale ondersteuning: CRM implementatie'

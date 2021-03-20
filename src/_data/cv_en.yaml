@@ -8,7 +8,7 @@ basics:
   email: process.env.EMAIL
   phone: process.env.PHONE
   url: ~
-  summary: >
+  summary: >-
     I'm very analytical, critical and systems oriented. I'm good at deeply focusing on something and seeing connections.
     I'm a generalist who builds upon proven solutions, understands what he needs to know when and likes learning from others.
     I love automation and the continuous delivery of value and the creativity that comes with it.
@@ -57,7 +57,7 @@ work:
     startDate: 2016-03-16
     endDate: 2017-21-04
     highlights:
-      - |
+      - |-
         technical consultative sales in machine building sector
         products: sensors, drive systems (e.g. motors), solenoids
       - 'digital support: CRM implementation'

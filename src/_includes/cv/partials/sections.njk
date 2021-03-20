@@ -19,9 +19,9 @@
 {% if intro %}
     {% call section(id='introduction', h2=strings.titles.intro) %}
         <div class="lead p-summary">
-            {{ intro | safe }}
+            {{- intro | escape | nl2br -}}
         </div>
-    {%- endcall %}
+    {% endcall %}
 {% endif %}
 
 {# experience #}
@@ -51,7 +51,7 @@
             <ul class="bulletlist">
                 {% for skill in skills %}
                     <li>
-                        <span>{{ skill.name }} ({{ skill.level | lower }}): </span>
+                        <span>{{- skill.name + ' (' + skill.level | lower + '): ' -}}</span>
                         {% for keyword in skill.keywords %}
                             <span>
                                 <span class="p-skill">{{ keyword | lower }}</span>
@@ -71,7 +71,7 @@
             <ul class="bulletlist">
                 {% for lang in languages %}
                     <li class="p-skill">
-                        {{ lang.language }} ({{ lang.fluency | lower }})
+                        {{- lang.language + ' (' + lang.fluency | lower +')' -}}
                     </li>
                 {% endfor %}
             </ul>
