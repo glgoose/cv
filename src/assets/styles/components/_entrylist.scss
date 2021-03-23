@@ -1,7 +1,7 @@
 .entrylist {
     position: relative;
     padding-left: 1rem;
-
+    
     &::before {
         content: '';
         display: block;
@@ -17,6 +17,14 @@
         top: 1.37rem;
         left: 1rem;
         bottom: 0;
+    }
+
+    @include mq-down(md) {
+        padding-left: 0.5rem;
+
+        &::before {
+            left: 0.5rem;
+        }
     }
 
     > * + * {
