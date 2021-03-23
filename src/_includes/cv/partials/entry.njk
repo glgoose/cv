@@ -26,9 +26,11 @@
                         <span class="p-name">{{ orgName }}</span>
                     {% endif %}
                     {% if entry.location %}
-                        <span aria-hidden="true">&middot;</span>
-                        {% icon "location" %}
-                        <span class="p-location">{{ entry.location }}</span>
+                        <span class="middot" aria-hidden="true">&middot;</span>
+                        <span class="location">
+                            {% icon "location" %}
+                            <span class="p-location">{{ entry.location }}</span>
+                        </span>
                     {% endif %}
                 </p>
             {% endif %}

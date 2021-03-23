@@ -15,14 +15,12 @@ header {
 }
 
 main {
-    padding-top: $spacing-y*2.5;
-    @media screen {
-        padding-bottom: $spacing-y*2.5;
-    }
+    padding: $spacing-y*2.5 0;
+    flex-grow: 1;
+
     @include mq-down(md)  {
         padding: 2.5vh 0;
     }
-    flex-grow: 1;
 }
 
 footer {
@@ -34,6 +32,19 @@ footer {
 
     a {
         padding: 0 0.5em;
+    }
+
+    @include mq-down(md) {
+        padding-bottom: 1.5em;
+
+        #footer-meta {
+            margin: 0.8em 0;
+        }
+
+        button {
+            justify-self: center;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -59,12 +70,11 @@ footer {
 
 .lang-switcher {
     font-size: 1.3em;
+    padding: 1em 0;
+
     @include mq(lg) { 
         padding-top: 2em;
         padding-bottom: 0.5em;
-    }
-    @include mq-down(md) {
-        padding: 1em 0;
     }
 
     span.divider {

@@ -19,9 +19,10 @@
 
     &__organization {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
 
-        span {
+        span.middot {
             padding: 0 0.4em;
         }
     }

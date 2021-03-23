@@ -1,16 +1,47 @@
 .vcard {
    &__content {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
         justify-content: space-between;
+
+        @include mq-down(md) {
+            flex-direction: column;
+        }
     }
     &__title {
-        margin-bottom: 0.4em;
+        margin-bottom: 0.5em;
     }
     &__subtitle {
         margin-bottom: 0.8rem;
         display: flex;
         align-items: center;
+    }
+    &__contact {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 0.3em;
+    }
+    &__link {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.3em 0;
+
+        @include mq-down(md) {
+            padding: 0.6em 0;
+        }
+
+        @include hover-focus {
+            text-decoration: none;
+            
+            .vcard__link-text {
+                text-decoration: underline;
+            }
+        }
+
+        .icon {
+            margin-right: 0.35em;
+        }
     }
     &__avatar {
         width: 11rem;
@@ -25,47 +56,5 @@
         font-size: 1.125rem;
         font-family: $font-family-sans-serif;
         color: $gray;
-    }
-    &__contact {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 0.6em;
-        margin-top: 0.3em;
-    }
-    &__link, 
-    &__social {
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        @include hover-focus {
-            text-decoration: none;
-            
-            .vcard__link-text {
-                text-decoration: underline;
-            }
-        }
-
-        .icon {
-            margin-right: 0.35em;
-        }
-    }
-
-    @include mq(lg) {
-
-        @supports (display: grid) {
-            &__avatar {
-                position: fixed;
-                top: calc(#{$spacing-y} + 1rem);
-                right: 75%;
-                transform: translateX(25%);
-                transition: transform 0.2s ease;
-                margin: 0;
-
-                .js-scrolled & {
-                    transform: translateX(25%) scale(0.75);
-                }
-            }
-        }
     }
 }
