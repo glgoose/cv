@@ -9,7 +9,7 @@
 @mixin mq($name, $print: false) {
     $min: breakpoint-min($name, $breakpoints);
     @if $min {
-        @media #{if($print, 'print, all ', 'all')} and (min-width: $min) {
+        @media #{if($print, 'print, all ', 'screen')} and (min-width: $min) {
             @content;
         }
     } @else {
@@ -24,7 +24,7 @@
 @mixin mq-down($name, $print: false) {
     $min: breakpoint-min($name, $breakpoints);
     @if $min {
-        @media #{if($print, 'print, all ', 'all')} and (max-width: ($min - 1px)) {
+        @media #{if($print, 'print, all ', 'screen')} and (max-width: ($min - 1px)) {
             @content;
         }
     } @else {
