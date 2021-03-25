@@ -1,6 +1,3 @@
-{# SET VARIABLES #}
-{% set data = { nl: cv_nl, en: cv_en } %}
-
 {# MACROS #}
 {% macro section(id, h2, 2col=false) %}
     <section class="section{{ ' section--half' if 2col }}" id="section-{{ id }}">
@@ -15,9 +12,9 @@
 
 {# HTML #}
 {# introduction #}
-{% set intro = data[lang].basics.summary %}
+{% set intro = cv.basics.summary %}
 {% if intro %}
-    {% call section(id='introduction', h2=strings.titles.intro) %}
+    {% call section(id='introduction', h2=strings[lang].cv.intro) %}
         <div class="lead p-summary">
             {{- intro | escape | nl2br -}}
         </div>
@@ -25,19 +22,19 @@
 {% endif %}
 
 {# experience #}
-{% call section(id='experience', h2=strings.titles.experience) %}
+{% call section(id='experience', h2=strings[lang].cv.experience) %}
     <ol class="entrylist" reversed>
-        {% for entry in data[lang].work | sort(reverse=true, caseSens=false, 'startDate') %}
+        {% for entry in cv.work | sort(reverse=true, caseSens=false, 'startDate') %}
             {{ createEntry(entry, entryTitle=entry.position, orgName=entry.name, microformat='p-experience') }}
         {% endfor %}
     </ol>
 {%- endcall %}
 
 {# education #}
-{% set education = data[lang].education %}
-{% call section(id='education', h2=strings.titles.education) %}
+{% set education = cv.education %}
+{% call section(id='education', h2=strings[lang].cv.education) %}
     <ol class="entrylist" reversed>
-        {% for entry in data[lang].education | sort(reverse=true, caseSens=false, 'startDate') %}
+        {% for entry in cv.education | sort(reverse=true, caseSens=false, 'startDate') %}
             {{ createEntry(entry, entryTitle=entry.studyType + ': ' + entry.area, orgName=entry.institution, microformat='p-education') }}
         {% endfor %}
     </ol>
@@ -45,9 +42,9 @@
 
 <div class="grid grid--2col">
     {# skills #}
-    {% set skills = data[lang].skills %}
+    {% set skills = cv.skills %}
     {% if skills %}
-        {% call section(id='skills', h2=strings.titles.skills, 2col=true) %}
+        {% call section(id='skills', h2=strings[lang].cv.skills, 2col=true) %}
             <ul class="bulletlist">
                 {% for skill in skills %}
                     <li>
@@ -65,9 +62,9 @@
     {% endif %}
 
     {# languages #}
-    {% set languages = data[lang].languages %}
+    {% set languages = cv.languages %}
     {% if languages %}
-        {% call section(id='languages', h2=strings.titles.languages, 2col=true) %}
+        {% call section(id='languages', h2=strings[lang].cv.languages, 2col=true) %}
             <ul class="bulletlist">
                 {% for lang in languages %}
                     <li class="p-skill">

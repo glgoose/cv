@@ -3,13 +3,7 @@ en:
   print: Print
   locale: en_US
 
-nl:
-  lastUpdated: Laatst aangepast
-  print: Print
-  locale: nl_BE
-
-cv:
-  en:
+  cv:
     intro: About Me
     experience: Work experience
     education: Education
@@ -17,7 +11,12 @@ cv:
     languages: Languages
     present: Present
 
-  nl:
+nl:
+  lastUpdated: Laatst aangepast
+  print: Print
+  locale: nl_BE
+
+  cv:
     intro: Over Mij
     experience: Werkervaring
     education: Opleiding
