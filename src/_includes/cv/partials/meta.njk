@@ -1,4 +1,4 @@
-{%- set absolutePageUrl -%}{{ meta.baseUrl }}{{ page.url | url }}{%- endset -%}
+{%- set absolutePageUrl -%}{{ site.baseUrl }}{{ page.url | url }}{%- endset -%}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,10 @@
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:locale" content="{{ cv[lang].locale }}">
+<meta property="og:locale" content="{{ strings[lang].locale }}">
 <meta name="twitter:card" content="summary">
-{%- if cv.avatar -%}
-    {%- set avatarUrl -%}/assets/images/{{ cv.avatar }}{% endset %}
-    <meta property="og:image" content="{{ avatarUrl | url }}">
+{%- if cv.basics.image  -%}
+    <meta property="og:image" content="{{ cv.basics.image | url }}">
 {%- endif -%}
 
 {# Favicon #}
@@ -25,28 +24,27 @@
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
 <link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | url }}">
-<link rel="manifest" href="{{ '/site.webmanifest' | url }}">
-{% if cv.colors.secondary %}
-    <link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="{{ cv.colors.secondary }}">
-    <meta name="theme-color" content="{{ cv.colors.secondary }}">
+{% if site.cv.colors.secondary %}
+    <link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="{{ site.cv.colors.secondary }}">
+    <meta name="theme-color" content="{{ site.cv.colors.secondary }}">
 {% endif %}
 
 {# JSON LD #}
 <script type="application/ld+json">
     {
-        "name":"{{ cv.name }}",
-        "description":"{{ cv[lang].description }}",
-        "cv": {
+        "name":"{{ cv.basics.name }}",
+        "description":"{{ data.description }}",
+        "resume": {
             "@type":"Person",
-            "name":"{{ cv.name }}"
+            "name":"{{ cv.basics.name }}"
         },
         "@type":"WebSite",
         "url":"{{ absolutePageUrl }}",
-        "image":"{{ meta.baseUrl }}/assets/images/{{ cv.avatar }}",
-        "headline":"{{ cv.name }}",
+        "image":"{{ cv.basics.image }}",
+        "headline":"{{ cv.basics.name }}",
         "sameAs":[
-            {%- for social in cv.social -%}
-                "{{ social.url }}"{%- if not loop.last -%},{%- endif -%}
+            {%- for profile in cv.profiles -%}
+                "{{ profile.url }}"{%- if not loop.last -%},{%- endif -%}
             {%- endfor -%}
         ],
         "@context":"http://schema.org"
