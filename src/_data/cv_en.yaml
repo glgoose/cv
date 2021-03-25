@@ -6,8 +6,7 @@ basics:
   pronouns: ~
   label: ~
   image: ~
-  email: process.env.EMAIL
-  phone: process.env.PHONE
+  email: ~
   url: ~
   summary: >-
     I'm very analytical, critical and systems oriented. I'm good at deeply focusing on something and seeing connections.
