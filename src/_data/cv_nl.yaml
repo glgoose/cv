@@ -3,6 +3,7 @@ $schema: 'https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/sche
 
 basics:
   name: Glenn Goossens
+  pronouns: ~
   label: ~
   image: ~
   email: process.env.EMAIL
@@ -18,9 +19,9 @@ basics:
     country: België
 
 profiles:
-  network: GitHub
-  username: glgoose
-  url: 'https://github.com/glgoose/'
+  - network: GitHub
+    username: glgoose
+    url: 'https://github.com/glgoose/'
 
 work:
   - name: Datopian
