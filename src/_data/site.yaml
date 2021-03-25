@@ -3,5 +3,5 @@ baseUrl: 'http://glenng.netlify.com'
 cv:
   repo: 'https://github.com/glgoose/resume'
   colors:
-    primary: #005b96
-    secondary: #fc6767
+    primary: '#005b96'
+    secondary: '#fc6767'

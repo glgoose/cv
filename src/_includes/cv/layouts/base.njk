@@ -5,7 +5,7 @@
     <link rel="preload" href="{{ '/assets/fonts/SourceCodePro-Light.otf.woff2.woff2' | url }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
 </head>
-<body {% if cv-meta.colors %}style="{{ site.cv.colors | themeColors }}"{% endif %}>
+<body {% if site.cv.colors %}style="{{ site.cv.colors | themeColors }}"{% endif %}>
     <div data-icon-sprite hidden>{% iconsprite %}</div>
 
     {{ content | safe }}
