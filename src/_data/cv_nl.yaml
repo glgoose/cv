@@ -108,7 +108,7 @@ skills:
       - Javascript
       - Zsh/bash
   - name: Markup
-    level: Gevorderde junior
+    level: Junior
     keywords:
       - HTML
       - CSS/SCSS
@@ -119,7 +119,7 @@ skills:
     keywords:
       - Git
   - name: Web scraping
-    level: Gevorderde junior
+    level: Junior
     keywords:
       - cheerio
       - puppeteer
