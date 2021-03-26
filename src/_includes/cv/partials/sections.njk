@@ -48,7 +48,7 @@
             <ul class="bulletlist">
                 {% for skill in skills %}
                     <li>
-                        <span>{{- skill.name + ' (' + skill.level | lower + '): ' -}}</span>
+                        <span>{{- skill.name + ' (' + skill.level | lower + ')' }}{{ ': ' if skill.keywords -}}</span>
                         {% for keyword in skill.keywords %}
                             <span>
                                 <span class="p-skill">{{ keyword | lower }}</span>
