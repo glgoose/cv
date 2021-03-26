@@ -121,7 +121,7 @@ skills:
   - name: Web scraping
     level: Junior
     keywords:
-      - cheerio
-      - puppeteer
+      - Cheerio
+      - Puppeteer
 
 ...
