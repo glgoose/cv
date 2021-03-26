@@ -102,19 +102,26 @@ languages:
     fluency: Comme ci, comme ça
 
 skills:
-  - name: Web dev
-    level: Basis
+  - name: Progammeertalen
+    level: Junior
     keywords:
       - Javascript
-      - Web scraping
+      - Zsh/bash
+  - name: Markup
+    level: Gevorderde junior
+    keywords:
       - HTML
-      - CSS
-      - Nunjucks
-  - name: Dev
-    level: Basis
+      - CSS/SCSS
+      - Nunjucks/jinja2
+      - Markdown
+  - name: Versioning
+    level: Junior
     keywords:
       - Git
-      - Zsh/bash
-      - Cli
+  - name: Web scraping
+    level: Gevorderde junior
+    keywords:
+      - cheerio
+      - puppeteer
 
 ...

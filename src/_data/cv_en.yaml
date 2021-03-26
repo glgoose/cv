@@ -102,19 +102,26 @@ languages:
     fluency: Intermediate
 
 skills:
-  - name: Web dev
-    level: Basic
+  - name: Programming languages
+    level: Junior
     keywords:
       - Javascript
-      - Web scraping
+      - Zsh/bash
+  - name: Markup
+    level: Advanced junior
+    keywords:
       - HTML
-      - CSS
-      - Nunjucks
-  - name: Dev
-    level: Basic
+      - CSS/SCSS
+      - Nunjucks/jinja2
+      - Markdown
+  - name: Versioning
+    level: Junior
     keywords:
       - Git
-      - Zsh/bash
-      - Cli
+  - name: Web scraping
+    level: Advanced junior
+    keywords:
+      - cheerio
+      - puppeteer
 
 ...
