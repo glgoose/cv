@@ -2,7 +2,7 @@
     // GENERAL PRINT RESET
 
     @page {
-        margin: 1.7cm;
+        margin: 2cm;
     }
 
     :root {
@@ -44,7 +44,7 @@
     // ELEMENTS
     // PRINT STYLE ADJUSTMENTS
 
-    body {
+    html, body {
         font-size: $print-font-size !important;
     }
 
@@ -58,10 +58,6 @@
 
     main {
         padding-bottom: 1em !important;
-    }
-
-    .section__title {
-        border-color: var(--text-color) !important;
     }
 
     .vcard__avatar {
