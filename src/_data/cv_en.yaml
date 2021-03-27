@@ -33,7 +33,7 @@ work:
     highlights:
       - 'working with data: collection, wrangling, presenting'
       - 'project: automating KPI dashboard with apps script (javascript)'
-      - '(technical) writing e.g. company playbook, issue tracking'
+      - '(technical) writing e.g. company playbook (vuepress), issue tracking'
       - 'help with further development of apprenticeship program & coaching of new apprentices'
 
   - name: Apify
