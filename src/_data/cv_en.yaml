@@ -1,0 +1,115 @@
+--- # CV English
+$schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+
+basics:
+  name: Glenn Goossens
+  pronouns: ~
+  label: ~
+  image: ~
+  email: ~
+  url: ~
+  summary: >-
+    I'm very analytical, critical and systems oriented. I'm good at deeply focusing on something and seeing connections.
+    I'm a generalist who builds upon proven solutions, understands what needs to be known when and likes learning from others.
+    I love automation, the continuous delivery of value and the creativity that comes with.
+  location:
+    city: Sint-Katelijne-Waver
+    countryCode: BE
+    country: Belgium
+
+profiles:
+  - network: GitHub
+    username: glgoose
+    url: "https://github.com/glgoose/"
+
+work:
+  - name: Datopian
+    position: Apprenticeship Data Engineering
+    location: Remote
+    description: Design, development and scaling of data portals & hubs
+    url: https://www.datopian.com/
+    startDate: 2019-10-01
+    endDate: 2019-12-31
+    highlights:
+      - "working with data: collection, wrangling, presenting"
+      - "project: automating KPI dashboard with apps script (javascript)"
+      - "(technical) writing e.g. company playbook (vuepress), issue tracking"
+      - "help with further development of apprenticeship program & coaching of new apprentices"
+
+  - name: Apify
+    position: Technical Consultant
+    location: Prague, Czech-Republic
+    description: ~
+    url: https://apify.com/
+    startDate: 2019-03-04
+    endDate: 2019-09-27
+    highlights:
+      - "develop web scrapers in javascript/node.js (w/ Apify SDK)"
+      - "web/browser automation w/ puppeteer (chrome)"
+      - "reverse engineer websites, API's & mobile apps"
+      - "managing communications and projects across multiple customers"
+
+  - name: Rotero
+    position: Sales Engineer
+    location: Mechelen, Belgium
+    description: ~
+    url: https://rotero.com/en/
+    startDate: 2016-03-16
+    endDate: 2017-21-04
+    highlights:
+      - |-
+        technical consultative sales in machine building sector
+        products: sensors, drive systems (e.g. motors), solenoids
+      - "digital support: CRM implementation"
+
+  - name: Tirendo
+    position: Marketing Management Trainee
+    location: Berlin, Germany
+    description: ~
+    url: https://www.tirendo.co.uk/
+    startDate: 2013-09-16
+    endDate: 2014-07-07
+    highlights:
+      - "automating w/ VBA in Excel: keyword & ad creation, internal text links (SEO)"
+      - "1st phase: manage AdWords for BeNeLux (±1 mil euro revenue)"
+      - "2nd phase: on- & off-age SEO, marketing analytics"
+
+education:
+  - studyType: Master of Science
+    area: "Industrial Engineering: Electromechanics, Minor Automotive Engineering"
+    institution: De Nayer
+    location: Sint-Katelijne-Waver, Belgium
+    url: https://iiw.kuleuven.be/english/programmes/MA/electromechanical-engineering
+    startDate: 2011-09-01
+    endDate: 2013-02-01
+
+  - studyType: Bachelor of Science
+    area: "Industrial Engineering: Electromechanics"
+    institution: De Nayer
+    location: Sint-Katelijne-Waver, Belgium
+    url: https://onderwijsaanbod.kuleuven.be/opleidingen/e/CQ_51601481.htm
+    startDate: 2008-09-01
+    endDate: 2011-09-01
+
+languages:
+  - language: Dutch
+    fluency: Native
+
+  - language: English
+    fluency: Native-like
+
+  - language: French
+    fluency: Intermediate
+
+skills:
+  - name: Languages
+    level: Junior
+    keywords:
+      - Javascript
+      - HTML
+      - CSS/SASS
+  - name: Frameworks
+    level: Junior
+    keywords:
+      - React (w/ hooks)
+      - Node.js/Express
