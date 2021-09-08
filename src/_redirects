@@ -1,0 +1,5 @@
+# Set redirects for use in Netlify
+# https://docs.netlify.com/routing/redirects/
+# https://docs.netlify.com/routing/redirects/redirect-options/
+
+/       /nl     302

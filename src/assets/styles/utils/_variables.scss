@@ -1,0 +1,69 @@
+//--------------------
+// SCSS VARIABLES
+//--------------------
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$breakpoints: (
+    md: 670px,
+    lg: 940px,
+    xl: 1260px
+);
+
+$container-max-width: map-get($breakpoints, 'lg');
+
+// Colors
+//
+// Grayscale.
+
+$gray-darkest: #373a3c;
+$gray-dark: #55595c;
+$gray: #818a91;
+$gray-light: #eceeef;
+$gray-lightest: #f7f7f9;
+
+// Brand Colors
+
+$brand-blue: #44505f;
+$brand-red: #ff7d7d;
+
+// Color Mappings
+
+$bg-color: #fff;
+$text-color: $gray-darkest;
+
+$primary-color: $brand-blue;
+$secondary-color: $brand-red;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: monospace;
+$font-family-base: $font-family-sans-serif;
+
+$print-font-size: 10px;
+
+$font-size-root: 100%;
+$font-size-base: 1.1rem;
+$line-height: 1.35;
+
+// Animation
+//
+// Default easing curves, Transitions, etc
+
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+$animation-curve-default: $animation-curve-fast-out-slow-in;
+
+// Misc Shared
+//
+// common shared styles
+
+$spacing-x: 2rem;
+$spacing-y: 1.1rem;
+$box-shadow-elevated: 8px 8px 40px -10px rgba(0, 0, 0, 0.3);

@@ -1,0 +1,83 @@
+// Main Site Layout
+
+body {
+    overflow-x: hidden;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+}
+
+main {
+    padding: $spacing-y*2.5 0;
+    flex-grow: 1;
+
+    @include mq-down(md)  {
+        padding: 2.5vh 0;
+    }
+}
+
+footer {
+    @media screen {
+        padding-top: 0.8em;
+        padding-bottom: 1em;
+    }
+    background-color: $gray-light;
+
+    a {
+        padding: 0 0.5em;
+    }
+
+    @include mq-down(md) {
+        padding-bottom: 1.5em;
+
+        #footer-meta {
+            margin: 0.8em 0;
+        }
+
+        button {
+            justify-self: center;
+            margin: 0 auto;
+        }
+    }
+}
+
+.container {
+    margin: 0 5vw;      /* with padding content shrinks because of max container width */
+    max-width: $container-max-width;
+    flex-grow: 1;
+
+    @include mq(lg) {
+        margin: 0 8vw;
+    }
+}
+
+.grid {
+    display: grid;
+    column-gap: $spacing-x * 2;
+    page-break-inside: avoid;
+
+    &--2col {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.lang-switcher {
+    font-size: 1.3em;
+    padding: 1em 0;
+
+    @include mq(lg) { 
+        padding-top: 2em;
+        padding-bottom: 0.5em;
+    }
+
+    span.divider {
+        padding: 0 0.2em;
+    }
+}

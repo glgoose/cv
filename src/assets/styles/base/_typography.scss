@@ -1,0 +1,61 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.2;
+    font-family: $font-family-sans-serif;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 1.45em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+p {
+    margin: 0;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: from-font;
+
+    color: $primary-color;
+    color: var(--primary-color, $primary-color);
+
+    @include hover-focus {
+        text-decoration: underline;
+    }
+}
+
+.lead {
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.entry {
+    &__title {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &__organization {
+        font-size: 1em;
+    }
+}

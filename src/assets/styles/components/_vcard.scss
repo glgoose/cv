@@ -1,0 +1,60 @@
+.vcard {
+   &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include mq-down(md) {
+            flex-direction: column;
+        }
+    }
+    &__title {
+        margin-bottom: 0.5em;
+    }
+    &__subtitle {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+    }
+    &__contact {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 0.3em;
+    }
+    &__link {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.3em 0;
+
+        @include mq-down(md) {
+            padding: 0.6em 0;
+        }
+
+        @include hover-focus {
+            text-decoration: none;
+            
+            .vcard__link-text {
+                text-decoration: underline;
+            }
+        }
+
+        .icon {
+            margin-right: 0.5em;
+        }
+    }
+    &__avatar {
+        width: 11rem;
+        height: 11rem;
+        flex: 0 0 11rem;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: $box-shadow-elevated;
+        margin-right: 2em;
+    }
+    &__pronouns {
+        font-size: 1.125rem;
+        font-family: $font-family-sans-serif;
+        color: $gray;
+    }
+}

@@ -1,0 +1,76 @@
+{# MACROS #}
+{% macro section(id, h2, twoCol = false) %}
+    <section class="section{{ ' section--half' if twoCol }}" id="section-{{ id }}">
+        <h2 class="section__title">{{ h2 }}</h2>
+        {{ caller() | safe }}
+    </section>
+{% endmacro %}
+
+{% macro createEntry(entry, entryTitle, orgName, microformat) %}
+    {% include "cv/partials/entry.njk" %}
+{% endmacro %}
+
+{# HTML #}
+{# introduction #}
+{% set intro = cv.basics.summary %}
+{% if intro %}
+    {% call section(id = 'introduction', h2 = strings[lang].cv.intro) %}
+    <div class="lead p-summary">
+        {{- intro | escape | nl2br -}}
+    </div>
+    {% endcall %}
+{% endif %}
+
+{# experience #}
+{% call section(id = 'experience', h2 = strings[lang].cv.experience) %}
+<ol class="entrylist" reversed>
+    {% for entry in cv.work | sort(reverse = true, caseSens = false, 'startDate') %}
+        {{ createEntry(entry, entryTitle=entry.position, orgName=entry.name, microformat='p-experience') }}
+    {% endfor %}
+</ol>
+{%- endcall %}
+
+{# education #}
+{% set education = cv.education %}
+{% call section(id = 'education', h2 = strings[lang].cv.education) %}
+<ol class="entrylist" reversed>
+    {% for entry in cv.education | sort(reverse = true, caseSens = false, 'startDate') %}
+        {{ createEntry(entry, entryTitle=entry.studyType + ': ' + entry.area, orgName=entry.institution, microformat='p-education') }}
+    {% endfor %}
+</ol>
+{%- endcall %}
+
+<div class="grid grid--2col">
+    {# skills #}
+    {% set skills = cv.skills %}
+    {% if skills %}
+        {% call section(id = 'skills', h2 = strings[lang].cv.skills, twoCol = true) %}
+        <ul class="bulletlist">
+            {% for skill in skills %}
+                <li>
+                    {% for keyword in skill.keywords %}
+                        <span>
+                            <span class="p-skill">{{ keyword | lower }}</span>
+                            {{- ', ' if not loop.last -}}
+                        </span>
+                    {% endfor %}
+                </li>
+            {% endfor %}
+        </ul>
+        {%- endcall %}
+    {% endif %}
+
+    {# languages #}
+    {% set languages = cv.languages %}
+    {% if languages %}
+        {% call section(id = 'languages', h2 = strings[lang].cv.languages, twoCol = true) %}
+        <ul class="bulletlist">
+            {% for lang in languages %}
+                <li class="p-skill">
+                    {{- lang.language + ' (' + lang.fluency | lower +')' -}}
+                </li>
+            {% endfor %}
+        </ul>
+        {%- endcall %}
+    {% endif %}
+</div>

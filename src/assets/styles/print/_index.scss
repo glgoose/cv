@@ -1,0 +1,81 @@
+@media print {
+    // GENERAL PRINT RESET
+
+    @page {
+        margin: 2cm;
+    }
+
+    :root {
+        --text-color: #000000;
+    }
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        overflow: visible;
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        transition: none !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    // ELEMENTS
+    // PRINT STYLE ADJUSTMENTS
+
+    html, body {
+        font-size: $print-font-size !important;
+    }
+
+    .container {
+        max-width: none !important;
+    }
+
+    footer {
+        background: transparent !important;
+    }
+
+    main {
+        padding-bottom: 1em !important;
+    }
+
+    .vcard__avatar {
+        position: static !important;
+        transform: none !important;
+        margin: 0 2rem 0 0 !important;
+        border: 0 !important;
+    }
+
+    .entrylist::before,
+    .entrylist__item::before,
+    li::before {
+        color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .entrylist__item,
+    .entry {
+        page-break-inside: avoid;
+    }
+}

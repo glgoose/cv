@@ -1,0 +1,22 @@
+.icon {
+    fill: currentColor;
+}
+
+.vcard__subtitle .icon {
+    color: var(--secondary-color, $secondary-color);
+    height: 1em;
+    width: 1em;
+    margin-right: 0.35em;
+}
+
+.vcard__contact .icon {
+    height: 1.5em;
+    width: 1.5em;
+    pointer-events: none;
+}
+
+.entry .icon {
+    height: 0.7em;
+    width: 0.7em;
+    margin-right: -0.3em; 
+}

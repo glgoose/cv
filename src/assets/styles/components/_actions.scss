@@ -1,0 +1,30 @@
+.actions {
+    display: flex;
+    justify-content: center;
+
+    &__btn {
+        @include button-reset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        background-color: transparent;
+        border-radius: 50%;
+        color: $text-color;
+
+        @include hover-focus {
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    @include mq(lg) {
+        &__btn {
+            margin: 0rem 1rem;
+        }
+
+        .js-scrolled & {
+            display: block;
+        }
+    }
+}
