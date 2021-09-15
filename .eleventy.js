@@ -73,6 +73,6 @@ module.exports = function (config) {
         templateFormats: ['njk', 'md', '11ty.js'],
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
-        pathPrefix: '/resume/'
+        pathPrefix: '/cv/'
     }
 }
