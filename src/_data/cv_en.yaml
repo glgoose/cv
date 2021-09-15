@@ -9,9 +9,8 @@ basics:
   email: ~
   url: ~
   summary: >-
-    I'm very analytical, critical and systems oriented. I'm good at deeply focusing on something and seeing connections.
-    I'm a generalist who builds upon proven solutions, understands what needs to be known when and likes learning from others.
-    I love automation, the continuous delivery of value and the creativity that comes with.
+    I'm an analytical & functional thinker, drawn to the web, who enjoys the creativity that comes with architecting and crafting digital applications & API's that are fast, pleasant to use, and nice to look at.
+    I tend to like automation as well as making things modular and understandable.
   location:
     city: Sint-Katelijne-Waver
     countryCode: BE
@@ -23,8 +22,20 @@ profiles:
     url: "https://github.com/glgoose/"
 
 work:
+  - name: BeCode
+    position: Web Developer Apprentice
+    location: Brussels, Belgium
+    description: ~
+    url: https://becode.org/
+    startDate: 2021-04-20
+    endDate: ~
+    highlights:
+      - "eCommerce store front-end w/ React & bootstrap"
+      - "room(mate) listing site w/ React & chakra UI"
+      - "task manager API with Node.js, Express, SQLite"
+      - "other tech: RESTful API design, SQL, DB: mongo & postgres, auth (passport)"
   - name: Datopian
-    position: Apprenticeship Data Engineering
+    position: Data Engineer Apprentice
     location: Remote
     description: Design, development and scaling of data portals & hubs
     url: https://www.datopian.com/
@@ -32,7 +43,8 @@ work:
     endDate: 2019-12-31
     highlights:
       - "working with data: collection, wrangling, presenting"
-      - "project: automating KPI dashboard with apps script (javascript)"
+      - "auto-fetch & update KPI dashboard data w/ apps script (javascript)"
+      - "create quizzical: generates Google Form skill assessment tests from markdown"
       - "(technical) writing e.g. company playbook (vuepress), issue tracking"
       - "help with further development of apprenticeship program & coaching of new apprentices"
 
@@ -113,3 +125,16 @@ skills:
     keywords:
       - React (w/ hooks)
       - Node.js/Express
+
+projects:
+  - name: Quizzical
+    description: generates Google Form skill assessment tests from markdown
+    technologies:
+      - Google Apps Script
+    repo: https://github.com/datopian/quizzical
+  - name: GIF Scroll Animation
+    description: creates a GIF of scrolling down a webpage
+    technologies:
+      - Javascript
+      - Node.js
+      - Puppeteer
