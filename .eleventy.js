@@ -1,31 +1,31 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
-const yaml = require("js-yaml");
+const yaml = require('js-yaml')
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
 
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv')
+dotenv.config()
 
 module.exports = function (config) {
     // Plugins
     config.addPlugin(pluginRss)
 
     // Filters
-    Object.keys(filters).forEach((filterName) => {
+    Object.keys(filters).forEach(filterName => {
         config.addFilter(filterName, filters[filterName])
     })
 
     // Transforms
-    Object.keys(transforms).forEach((transformName) => {
+    Object.keys(transforms).forEach(transformName => {
         config.addTransform(transformName, transforms[transformName])
     })
 
     // Shortcodes
-    Object.keys(shortcodes).forEach((shortcodeName) => {
+    Object.keys(shortcodes).forEach(shortcodeName => {
         config.addShortcode(shortcodeName, shortcodes[shortcodeName])
     })
 
@@ -47,7 +47,7 @@ module.exports = function (config) {
     )
 
     // YAML
-    config.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+    config.addDataExtension('yaml', contents => yaml.safeLoad(contents))
 
     // Layouts
     config.addLayoutAlias('base', 'cv/layouts/base.njk')
@@ -72,6 +72,7 @@ module.exports = function (config) {
         },
         templateFormats: ['njk', 'md', '11ty.js'],
         htmlTemplateEngine: 'njk',
-        markdownTemplateEngine: 'njk'
+        markdownTemplateEngine: 'njk',
+        pathPrefix: '/resume/'
     }
 }

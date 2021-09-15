@@ -1,6 +1,6 @@
 <div class="vcard h-card">
     {% if cv.basics.image %}
-        <img class="vcard__avatar u-photo" src="{{ cv.basics.image | base64file }}" width="200" height="200" alt="{{ cv.basics.name }}" />
+        <img class="vcard__avatar u-photo" src="{{ cv.basics.image | base64file }}" width="200" height="200" alt="{{ cv.basics.name }}"/>
     {% endif %}
 
     <div class="vcard__content">
@@ -13,17 +13,25 @@
                 {% endif %}
             </div>
 
-            <p class="vcard__subtitle lead">
-                {% if cv.basics.label %}
+            <div class="vcard__subtitle lead">
+                {# {% if cv.basics.label %}
                     <span class="p-occupation">{{ cv.basics.label }}</span>
                     <span aria-hidden="true">&middot;</span>
-                {% endif %}
+                {% endif %} #}
 
                 {% if cv.basics.location %}
-                    {% icon "location" %}
-                    <span class="p-locality">{{ cv.basics.location.city + ', ' + cv.basics.location.country }}</span>
+                    <div>
+                        {% icon "location" %}
+                        <span class="p-locality" style='margin-left: -0.5em'>{{ cv.basics.location.city + ', ' + cv.basics.location.country }}</span>
+                    </div>
                 {% endif %}
-            </p> 
+
+                {% if cv.basics.url %}
+                    <a class="vcard__link u-url" aria-label="Website" href="{{ cv.basics.url }}" style='margin-top: 0.7em'>
+                        <span class="vcard__link-text">{{ cv.basics.url | stripProtocol }}</span>
+                    </a>
+                {% endif %}
+            </div>
         </div>
 
         <div class="vcard__contact p-contact">
@@ -39,7 +47,7 @@
                     <span class="vcard__link-text">{{ phone }}</span>
                 </a>
             {% endif %}
-            
+
             {% if cv.basics.email %}
                 {% set email = cv.basics.email %}
             {% elif contact.email %}
@@ -50,13 +58,6 @@
                 <a class="vcard__link u-email" aria-label="Email" href="mailto:{{ email | obfuscate | safe }}">
                     {% icon "email" %}
                     <span class="vcard__link-text">{{ email | obfuscate | safe }}</span>
-                </a>
-            {% endif %}
-
-            {% if cv.basics.url %}
-                <a class="vcard__link u-url" aria-label="Website" href="{{ cv.basics.url }}">
-                    {% icon "laptop" %}
-                    <span class="vcard__link-text">{{ cv.basics.url | stripProtocol }}</span>
                 </a>
             {% endif %}
 
@@ -71,7 +72,7 @@
                         </a>
                     {% endfor %}
                 </div>
-            {% endif %} 
+            {% endif %}
         </div>
     </div>
 </div>

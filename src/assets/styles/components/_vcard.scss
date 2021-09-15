@@ -1,5 +1,5 @@
 .vcard {
-   &__content {
+    &__content {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -14,7 +14,7 @@
     &__subtitle {
         margin-bottom: 0.8rem;
         display: flex;
-        align-items: center;
+        flex-direction: column;
     }
     &__contact {
         display: grid;
@@ -33,7 +33,7 @@
 
         @include hover-focus {
             text-decoration: none;
-            
+
             .vcard__link-text {
                 text-decoration: underline;
             }

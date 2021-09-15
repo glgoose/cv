@@ -15,10 +15,10 @@ header {
 }
 
 main {
-    padding: $spacing-y*2.5 0;
+    padding: $spacing-y * 2.2 0;
     flex-grow: 1;
 
-    @include mq-down(md)  {
+    @include mq-down(md) {
         padding: 2.5vh 0;
     }
 }
@@ -49,7 +49,7 @@ footer {
 }
 
 .container {
-    margin: 0 5vw;      /* with padding content shrinks because of max container width */
+    margin: 0 5vw; /* with padding content shrinks because of max container width */
     max-width: $container-max-width;
     flex-grow: 1;
 
@@ -72,7 +72,7 @@ footer {
     font-size: 1.3em;
     padding: 1em 0;
 
-    @include mq(lg) { 
+    @include mq(lg) {
         padding-top: 2em;
         padding-bottom: 0.5em;
     }

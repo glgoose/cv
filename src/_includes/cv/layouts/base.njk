@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ lang }}">
-<head>
-    {% include "../partials/meta.njk" %}
-    <link rel="preload" href="{{ '/assets/fonts/SourceCodePro-Light.otf.woff2.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
-</head>
-<body {% if site.cv.colors %}style="{{ site.cv.colors | themeColors }}"{% endif %}>
-    <div data-icon-sprite hidden>{% iconsprite %}</div>
+    <head>
+        {% include "../partials/meta.njk" %}
+        <link rel="preload" href="{{ '/assets/fonts/SourceCodePro-Light.otf.woff2.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+    </head>
+    <body {% if site.cv.colors %}style="{{ site.cv.colors | themeColors }}"{% endif %}>
+        <div data-icon-sprite hidden>{% iconsprite %}</div>
 
-    {{ content | safe }}
+        {{ content | safe }}
 
-    <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
-    <!--! LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
-</body>
+        <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
+        <!--! LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
+    </body>
 </html>

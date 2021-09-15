@@ -32,21 +32,21 @@
 {# JSON LD #}
 <script type="application/ld+json">
     {
-        "name":"{{ cv.basics.name }}",
-        "description":"{{ data.description }}",
+        "name": "{{ cv.basics.name }}",
+        "description": "{{ data.description }}",
         "resume": {
-            "@type":"Person",
-            "name":"{{ cv.basics.name }}"
+            "@type": "Person",
+            "name": "{{ cv.basics.name }}"
         },
-        "@type":"WebSite",
-        "url":"{{ absolutePageUrl }}",
-        "image":"{{ cv.basics.image }}",
-        "headline":"{{ cv.basics.name }}",
-        "sameAs":[
+        "@type": "WebSite",
+        "url": "{{ absolutePageUrl }}",
+        "image": "{{ cv.basics.image }}",
+        "headline": "{{ cv.basics.name }}",
+        "sameAs": [
             {%- for profile in cv.profiles -%}
                 "{{ profile.url }}"{%- if not loop.last -%},{%- endif -%}
             {%- endfor -%}
         ],
-        "@context":"http://schema.org"
+        "@context": "http://schema.org"
     }
 </script>
