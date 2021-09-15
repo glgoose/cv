@@ -4,14 +4,13 @@ $schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/sche
 basics:
   name: Glenn Goossens
   pronouns: ~
-  label: ~
+  label: Full-Stack Javascript Web Developer
   image: ~
   email: ~
   url: https://goose.sh
   summary: >-
-    Ik ben zeer analytisch, kritisch en systeemgericht. Ik kan goed ergens diep op focussen en verbanden zien.
-    Ik ben een generalist die verder bouwt op bewezen oplossingen, begrijpt wat wanneer nodig is en graag van anderen bijleert.
-    Ik hou van automatiseren, het continue toevoegen van waarde en de creativiteit die daarbij komt kijken.
+    Ik ben een analytische & functionele denker die aangetrokken is tot het internet en de creativiteit die komt kijken bij het ontwerpen en bouwen van digitale applicaties & API's die snel zijn, leuk zijn in gebruik en mooi zijn om naar te kijken.
+    Ik hou van automatisatie, alsook dingen modulair en begrijpbaar maken.
   location:
     city: Sint-Katelijne-Waver
     countryCode: BE
@@ -23,8 +22,21 @@ profiles:
     url: "https://github.com/glgoose/"
 
 work:
+  - name: BeCode
+    position: Web Developer (Opleiding)
+    location: Brussels, Belgium
+    description: ~
+    url: https://becode.org/
+    startDate: 2021-04-20
+    endDate: ~
+    highlights:
+      - "eCommerce winkel front-end met React & Bootstrap"
+      - "kamer/huisgenoot site met React & Chakra UI"
+      - "CRUD API with Node.js, Express, SQLite"
+      - "andere tech: RESTful API ontwerp, SQL, DB: Mongo & Postgres, Auth (Passport)"
+
   - name: Datopian
-    position: Opleidingsstage Data Ingenieur
+    position: Data Ingenieur (Opleidingsstage)
     location: Op afstand
     description: Design, ontwikkeling en schalen van data portalen & hubs
     url: https://www.datopian.com/

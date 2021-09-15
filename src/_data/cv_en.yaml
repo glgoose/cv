@@ -4,7 +4,7 @@ $schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/sche
 basics:
   name: Glenn Goossens
   pronouns: ~
-  label: ~
+  label: Full-Stack Javascript Web Developer
   image: ~
   email: ~
   url: https://goose.sh
@@ -30,10 +30,11 @@ work:
     startDate: 2021-04-20
     endDate: ~
     highlights:
-      - "eCommerce store front-end w/ React & bootstrap"
-      - "room(mate) listing site w/ React & chakra UI"
-      - "task manager API with Node.js, Express, SQLite"
-      - "other tech: RESTful API design, SQL, DB: mongo & postgres, auth (passport)"
+      - "eCommerce store front-end w/ React & Bootstrap"
+      - "room(mate) listing site w/ React & Chakra UI"
+      - "CRUD API with Node.js, Express, SQLite"
+      - "other tech: RESTful API design, SQL, DB: Mongo & Postgres, Auth (Passport)"
+
   - name: Datopian
     position: Data Engineer Apprentice
     location: Remote
