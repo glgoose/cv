@@ -3,13 +3,18 @@ layout: base
 ---
 
 {# SET CV DATA #}
-{% set selector = { nl: cv_nl, en: cv_en } %}
+{% set selector = {
+    nl: cv_nl,
+    en: cv_en
+} %}
 {% set cv = selector[lang] %}
 
 {# HTML #}
 <div class="lang-switcher utl-screen-only">
     <div class="container utl-justify-center">
-        <a href="/en/">EN</a><span class="divider">|</span><a href="/nl/">NL</a>
+        <a href="/">EN</a>
+        <span class="divider">|</span>
+        <a href="/nl/">NL</a>
     </div>
 </div>
 
