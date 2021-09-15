@@ -44,7 +44,8 @@
     // ELEMENTS
     // PRINT STYLE ADJUSTMENTS
 
-    html, body {
+    html,
+    body {
         font-size: $print-font-size !important;
     }
 
@@ -57,6 +58,7 @@
     }
 
     main {
+        padding-top: 1em !important;
         padding-bottom: 1em !important;
     }
 
