@@ -3,13 +3,13 @@
         <div class="entry__header">
 
             <h3 class="entry__title p-name">{{ entryTitle | safe }}</h3>
-            
+
             <p class="entry__time">
                 <time class="dt-start" datetime="{{ entry.startDate | dateToFormat("yyyy-MM-dd") }}">
                     {{- entry.startDate | dateToFormat("MM/yyyy") -}}
                 </time>
                 <span>&ndash;</span>
-                {% if entry.startDate %}
+                {% if entry.endDate %}
                     <time class="dt-end" datetime="{{ entry.endDate | dateToFormat("yyyy-MM-dd") }}">
                         {{- entry.endDate | dateToFormat("MM/yyyy") -}}
                     </time>
