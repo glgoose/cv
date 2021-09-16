@@ -25,53 +25,53 @@
                         <span class="p-locality" style='margin-left: -0.5em'>{{ cv.basics.location.city + ', ' + cv.basics.location.country }}</span>
                     </div>
                 {% endif %}
+            </div>
+            <div class="vcard__contact p-contact">
+                {% if cv.basics.phone %}
+                    {% set phone = cv.basics.phone %}
+                {% elif contact.phone %}
+                    {% set phone = contact.phone %}
+                {% endif %}
 
-                {% if cv.basics.url %}
-                    <a class="vcard__link u-url" aria-label="Website" href="{{ cv.basics.url }}" style='margin-top: 0.7em'>
-                        <span class="vcard__link-text">{{ cv.basics.url | stripProtocol }}</span>
+                {% if phone %}
+                    <a class="vcard__link p-tel" aria-label="Telephone" href="tel:{{ phone | stripSpaces }}">
+                        {% icon "telephone" %}
+                        <span class="vcard__link-text">{{ phone }}</span>
+                    </a>
+                {% endif %}
+
+                {% if cv.basics.email %}
+                    {% set email = cv.basics.email %}
+                {% elif contact.email %}
+                    {% set email = contact.email %}
+                {% endif %}
+
+                {% if email %}
+                    <a class="vcard__link u-email" aria-label="Email" href="mailto:{{ email | obfuscate | safe }}">
+                        {% icon "email" %}
+                        <span class="vcard__link-text">{{ email | obfuscate | safe }}</span>
                     </a>
                 {% endif %}
             </div>
         </div>
 
-        <div class="vcard__contact p-contact">
-            {% if cv.basics.phone %}
-                {% set phone = cv.basics.phone %}
-            {% elif contact.phone %}
-                {% set phone = contact.phone %}
-            {% endif %}
-
-            {% if phone %}
-                <a class="vcard__link p-tel" aria-label="Telephone" href="tel:{{ phone | stripSpaces }}">
-                    {% icon "telephone" %}
-                    <span class="vcard__link-text">{{ phone }}</span>
-                </a>
-            {% endif %}
-
-            {% if cv.basics.email %}
-                {% set email = cv.basics.email %}
-            {% elif contact.email %}
-                {% set email = contact.email %}
-            {% endif %}
-
-            {% if email %}
-                <a class="vcard__link u-email" aria-label="Email" href="mailto:{{ email | obfuscate | safe }}">
-                    {% icon "email" %}
-                    <span class="vcard__link-text">{{ email | obfuscate | safe }}</span>
+        <div class="vcard__links p-link">
+            {% if cv.basics.url %}
+                <a class="vcard__link u-url" aria-label="Website" href="{{ cv.basics.url }}" style='margin-top: 0.7em'>
+                    {% icon "globe" %}
+                    <span class="vcard__link-text">{{ cv.basics.url | stripProtocol }}</span>
                 </a>
             {% endif %}
 
             {% if cv.profiles %}
-                <div class="vcard__social">
-                    {% for profile in cv.profiles %}
-                        <a class="vcard__link" href="{{ profile.url }}" aria-label="{{ profile.network }}" target="_blank" rel="me">
-                            {%- set isSocialIcon = true -%}
-                            {%- icon profile.network, isSocialIcon -%}
-                            <span class="vcard__link-text p-nickname">{{- profile.username -}}</span>
-                            <span class="sr-only">on {{ profile.network }}</a>
-                        </a>
-                    {% endfor %}
-                </div>
+                {% for profile in cv.profiles %}
+                    <a class="vcard__link" href="{{ profile.url }}" aria-label="{{ profile.network }}" target="_blank" rel="me">
+                        {%- set isSocialIcon = true -%}
+                        {%- icon profile.network, isSocialIcon -%}
+                        <span class="vcard__link-text p-nickname">{{- profile.username -}}</span>
+                        <span class="sr-only">on {{ profile.network }}</a>
+                    </a>
+                {% endfor %}
             {% endif %}
         </div>
     </div>

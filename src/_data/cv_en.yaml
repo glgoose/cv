@@ -21,6 +21,10 @@ profiles:
     username: glgoose
     url: "https://github.com/glgoose/"
 
+  - network: LinkedIn
+    username: goossensglenn
+    url: "https://www.linkedin.com/in/goossensglenn/"
+
 work:
   - name: BeCode
     position: Web Developer Apprentice
