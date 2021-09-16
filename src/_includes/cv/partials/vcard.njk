@@ -57,7 +57,7 @@
 
         <div class="vcard__links p-link">
             {% if cv.basics.url %}
-                <a class="vcard__link u-url" aria-label="Website" href="{{ cv.basics.url }}" style='margin-top: 0.7em'>
+                <a class="vcard__link u-url" aria-label="Website" href="{{ cv.basics.url }}">
                     {% icon "globe" %}
                     <span class="vcard__link-text">{{ cv.basics.url | stripProtocol }}</span>
                 </a>

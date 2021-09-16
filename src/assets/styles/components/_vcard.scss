@@ -18,12 +18,13 @@
     &__contact {
         display: flex;
         gap: 1.5em;
-        margin-top: 0.8em;
+        margin-top: 1em;
     }
     &__links {
         display: flex;
         flex-direction: column;
         gap: 0.25em;
+        margin-top: 0.7em;
     }
     &__link {
         display: inline-flex;
