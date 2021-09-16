@@ -1,5 +1,6 @@
 en:
   lastUpdated: Last updated
+  present: Present
   print: Print
   locale: en_US
 
@@ -13,6 +14,7 @@ en:
 
 nl:
   lastUpdated: Laatst aangepast
+  present: Heden
   print: Print
   locale: nl_BE
 
